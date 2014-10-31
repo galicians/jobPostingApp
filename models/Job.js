@@ -7,13 +7,13 @@ var jobSchema = mongoose.Schema({
 
 var Job = mongoose.model('Job', jobSchema);
 
-exports.seedJobs = function() {
+exports.seedJobs = function(callback) {
 	Job.find({}).exec(function(error, collection){
 		if(collection.length === 0) {
 			Job.create({title:'Maker', description:"A makers builds amazing web apps"})
 			Job.create({title:'coder', description:"Codeds in all the languages"})
 			Job.create({title:'debugger', description:"saves you from suicide"})
-			Job.create({title:'code teacher', description:"helps you to become a maker"})
+			Job.create({title:'code teacher', description:"helps you to become a maker"},callback)
 		}
 	})
 }
