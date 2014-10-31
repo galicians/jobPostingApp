@@ -4,7 +4,7 @@ var app = express();
 
 app.set('views', __dirname)
 app.set('view engine', 'jade');
-app.use(express.static(__dirname + '/bower_components'));
+app.use(express.static(__dirname + '/public'));
 
 app.get('*', function(request, response) {
 	response.render('index');
