@@ -3,6 +3,7 @@ var mongoose = require('mongoose')
 var app = express();
 var jobModel = require('./models/Job');
 
+
 var port = process.env.PORT || 5000
 
 
@@ -15,8 +16,6 @@ app.get('/api/jobs', function(request, response) {
 		response.send(collection)
 	})
 })
-
-
 
 
 
