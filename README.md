@@ -16,6 +16,10 @@ Using MongoDb to add persistance to our app
 How to get Heroku to work with mongo db using mongolabs
 Using a seed method to populate the db when it is empty
 
+TDD: Testing asynchronous calls, and nested callbacks with mocha and Chai
+
+Bluebird to add promises, that will help to keep cleaner tests
+
 To take a look at the project, please visit the URL:
 
 https://postingmakerjobs.herokuapp.com/
