@@ -12,14 +12,14 @@ function resetJobs() {
 describe('get jobs', function(){
 	it("should never be empty since jobs are seeded", function(done) {
 		mongoose.connect('mongodb://localhost/jobfinder', function() {
-			resetJobs().then(function() {
-				jobModel.seedJobs().then(function() {
-					mongoose.model('Job').find({}).exec(function(error, jobsList) {
-						expect(jobsList.length).to.be.at.least(1);
-						done();
-					});
+			resetJobs()
+			.then(jobModel.seedJobs)
+			.then(function() {	
+				mongoose.model('Job').find({}).exec(function(error, jobsList) {
+					expect(jobsList.length).to.be.at.least(1);
+					done();
 				});
-			});	
-		});
-	});	
-});
+			});
+		});	
+	});
+});	
