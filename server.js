@@ -2,7 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose')
 var app = express();
 var jobModel = require('./models/Job');
-
+var jobsData = require('./jobs-data.js');
 
 var port = process.env.PORT || 5000
 
@@ -12,12 +12,10 @@ app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/api/jobs', function(request, response) {
-	mongoose.model('Job').find({}).exec(function(error, collection) {
+	jobsData.findJobs().then(function(collection) {
 		response.send(collection)
 	})
 })
-
-
 
 app.get('*', function(request, response) {
 	response.render('index');
