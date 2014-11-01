@@ -23,3 +23,5 @@ Bluebird to add promises, that will help to keep cleaner tests, getting rid of n
 To take a look at the project, please visit the URL:
 
 https://postingmakerjobs.herokuapp.com/
+
+[ ![Codeship Status for galicians/jobPostingApp](https://www.codeship.io/projects/e26f9310-4424-0132-a4ed-52edbda4e693/status)](https://www.codeship.io/projects/44792)
