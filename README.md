@@ -18,7 +18,7 @@ Using a seed method to populate the db when it is empty
 
 TDD: Testing asynchronous calls, and nested callbacks with mocha and Chai
 
-Bluebird to add promises, that will help to keep cleaner tests
+Bluebird to add promises, that will help to keep cleaner tests, getting rid of nested call backs
 
 To take a look at the project, please visit the URL:
 

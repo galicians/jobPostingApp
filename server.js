@@ -1,11 +1,10 @@
 var express = require('express');
-var mongoose = require('mongoose')
-var app = express();
 var jobModel = require('./models/Job');
 var jobsData = require('./jobs-data.js');
 
 var port = process.env.PORT || 5000
 
+var app = express();
 
 app.set('views', __dirname)
 app.set('view engine', 'jade');
@@ -22,13 +21,11 @@ app.get('*', function(request, response) {
 });
 
 // mongoose.connect('mongodb://localhost/jobfinder');
-mongoose.connect('mongodb://galicians:galicians@ds049160.mongolab.com:49160/makersjobfinder');
-
-var con = mongoose.connection;
-
-con.once('open', function() {
+jobsData.connectDB('mongodb://galicians:galicians@ds049160.mongolab.com:49160/makersjobfinder')
+.then(function() {
 	console.log("connected to mongodb successfully!")
-	jobModel.seedJobs();
+	jobsData.seedJobs();
 })
+
 
 app.listen(port);
