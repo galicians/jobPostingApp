@@ -4,7 +4,7 @@ var Promise = require("bluebird")
 var Job = mongoose.model('Job')
 
 var jobs = [
-		{title:'Maker', description:"A makers builds amazing web apps"},
+		{title:'Maker', description:"A maker, goes to makers academy where builds amazing web apps"},
 		{title:'coder', description:"Codeds in all the languages"},
 		{title:'debugger', description:"saves you from suicide"},
 		{title:'code teacher', description:"helps you to become a maker"}
