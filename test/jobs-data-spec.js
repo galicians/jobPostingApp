@@ -16,16 +16,32 @@ function findJobs(query) {
 }
 
 describe('get jobs', function(){
-	it("should never be empty since jobs are seeded", function(done) {
+
+	var jobs;
+
+	before(function(done) {
 		connectDB('mongodb://localhost/jobfinder')
-			.then(resetJobs)
-			.then(jobModel.seedJobs)
-			.then(findJobs)
-			.then(function(jobsList) {
-				expect(jobsList.length).to.be.at.least(1);
-				done();
-			});
+		.then(resetJobs)
+		.then(jobModel.seedJobs)
+		.then(findJobs)
+		.then(function(collection) {
+			jobs = collection
+			done();
 		});
-	});	
+	})
+
+	it("should never be empty since jobs are seeded", function() {
+		expect(jobs.length).to.be.at.least(1);
+	});
+
+	it("should have a job with a title", function() {
+		expect(jobs[0].title).to.not.be.emtpy;
+	});
+
+	it("should have a job with a description", function() {
+		expect(jobs[0].description).to.not.be.emtpy;
+	});
+
+});	
 
 
