@@ -18,6 +18,8 @@ exports.findJobs = findJobs;
 
 exports.connectDB = Promise.promisify(mongoose.connect, mongoose);
 
+exports.saveJob = createJob;
+
 var createJob = Promise.promisify(Job.create, Job);
 
 exports.seedJobs = function() {

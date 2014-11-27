@@ -20,6 +20,12 @@ TDD: Testing asynchronous calls, and nested callbacks with mocha and Chai
 
 Bluebird to add promises, that will help to keep cleaner tests, getting rid of nested call backs
 
+codeship to run tests, make the build and deploy in heroku
+
+supertest, to past data to our api through a test
+
+
+
 To take a look at the project, please visit the URL:
 
 https://postingmakerjobs.herokuapp.com/
